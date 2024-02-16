@@ -16,4 +16,12 @@ def emotion_detector(text_to_analyse):
     'sadness': formatted_response['emotionPredictions'][0]['emotion']['sadness'],
     'dominant_emotion': dominant_emotion
     }
+    if response.status_code == 400:
+        output['anger']=None
+        output['disgust']=None
+        output['fear']=None
+        output['joy']=None
+        output['sadness']=None
+        output['dominant_emotion']=None
+        
     return output
